@@ -4,9 +4,9 @@ import uaslp.objetos.list.Iterator;
 
 public class LinkedListIterator implements Iterator {
 
-    private Node currentNode;
+    private LinkedList.Node currentNode;
 
-    LinkedListIterator(Node startNode)
+    LinkedListIterator(LinkedList.Node startNode)
     {
         currentNode=startNode;
     }
