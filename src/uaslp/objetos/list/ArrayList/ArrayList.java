@@ -93,9 +93,21 @@ public class ArrayList implements List {
     }
 
     @Override
-    public Iterator getIterator()
-    {
-        return new ArrayListIterator(this);
+    public Iterator getIterator() {
+        return new Iterator() { //Clase anónima de iterator
+                      //También es una inner class no estática
+            private int currentItem;
+
+            @Override
+            public boolean hasNext() {
+                return currentItem < size;
+            }
+
+            @Override
+            public String next() {
+                return array[currentItem++];
+            }
+        };
     }
 
     private void increaseArrayList(){
